@@ -3,9 +3,8 @@ import './VideosGrid.css'
 
 import { VideoCard } from '../VideoCard/VideoCard'
 
-export const VideosGrid = ({filteredVideos, loading}) => {
+export const VideosGrid = ({videos, loading}) => {
 
-    console.log(filteredVideos, loading)
 
   return (
     <section >
@@ -17,7 +16,7 @@ export const VideosGrid = ({filteredVideos, loading}) => {
                 {loading && <p>Loading</p>}
 
                 {
-                    filteredVideos.map(video =>{
+                    videos.map(video =>{
                         
                         return <VideoCard {...video} key={video.id}/>
                     })

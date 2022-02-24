@@ -2,7 +2,7 @@ import React from 'react'
 import { Filter } from '../../components/filter/Filter'
 import './Header.css'
 
-export const Header = ({setInputValue}) => {
+export const Header = ({setInputValue, inputValue}) => {
   return (
       <header >
         <div className="wrapper">
@@ -16,7 +16,7 @@ export const Header = ({setInputValue}) => {
               
               {/* RIGHT */}
               <div className="app__header-input">
-                  <Filter /* videos={videos} setVideos={setVideos} */ setInputValue={setInputValue} />
+                  <Filter  setInputValue={setInputValue} inputValue={inputValue} />
 
                   <div className="app__header-button__container">
                     <button className="p__roboto-button header__button-filter">Más Populares</button>

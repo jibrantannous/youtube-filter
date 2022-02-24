@@ -7,30 +7,48 @@ import './App.css';
 
 function App() {
 
-  const [inputValue, setInputValue] = useState('');
- 
   const {data, loading} = useFetchVideos();
-
-  console.log(data)
-
-
-  let filteredVideos;
-  useEffect(() => {
-    filteredVideos = data.filter(videos => videos.title.videostoLowerCase().includes(inputValue.toLowerCase()));
   
-    
+  const [inputValue, setInputValue] = useState('');
+  const [videos, setVideos] = useState(data);
+  const [filteredVideos, setFilteredVideos] = useState(videos)
+
+
+  useEffect(() => {
+
+    setVideos(data)
+    setFilteredVideos(data)
+  
   }, [data])
   
+
+  useEffect(() => {
+
+      setFilteredVideos( videos.filter( video => {
+          return video.title.toLowerCase().includes(inputValue.toLowerCase()) 
+      }))
+  }, [inputValue]) 
   
 
-
-
+  
   return (
     <>
-      <Header /* videos={videos} setVideos={setVideos} */ setInputValue={setInputValue} inputValue={inputValue}  />
+      <Header  setInputValue={setInputValue} inputValue={inputValue} />
       <VideosGrid videos={filteredVideos} loading={loading} />
+
+
+
+      {/* {true && <Modal/>} */}
     </>
   );
 }
+
+
+
+
+
+
+
+
 
 export default App;

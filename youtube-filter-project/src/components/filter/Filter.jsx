@@ -1,60 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import  './filter.css'
 
-export const Filter = ({setInputValue, inputValue}) => {
-
-    /* const [inputValue, setInputValue] = useState(''); */
+export const Filter = ({setInputValue, inputValue }) => {
 
     const handleInputChange = ( e ) => {
         setInputValue(e.target.value);
         /* videoFilter(inputValue) */
     }
-
-
-   
-    /*  useEffect(() => {
-
-       setVideos( videos.filter( video => {
-
-            return video.title.toLowerCase().includes(inputValue.toLowerCase()) 
-        })
-        )
-        
-    }, [inputValue])  */
-
-
-    
-
-//    const videoFilter = (inputValue) => {
-//
-//
-//        const videosFiltados = videos.filter((video) => {
-//
-// //           /* if (inputValue == "") {
- //               return video
- //           } *//* else if( video.title.toLowerCase().include(inputValue.toLowerCase())){
- //               return video
-//
- //           } */
-//
- //           /* return video.title.toLowerCase().include(inputValue.toLowerCase()) */
-//
- //           return video.title.toLowerCase().include(inputValue.toLowerCase())
-
- //       } )
-//
-//        return setVideos([...videosFiltados])
- //   }
-
-    
-
- //   useEffect(() => {
-//
- //       videoFilter(inputValue)
- //       
-//    }, [inputValue])
-//    
-
 
     /* const handleSubmit = (e) => {
         e.preventDefault();
