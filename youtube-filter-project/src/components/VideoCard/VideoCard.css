@@ -1,0 +1,17 @@
+.card{
+    width: 300px;
+    text-align: left;
+    /* border: 1px solid grey; */
+    /* border-radius: 6px; */
+    overflow: hidden;
+    margin-bottom: 45px;
+}
+  
+  .card p {
+    padding: 5px;
+
+  }
+  
+  .card img {
+    width: 300px;
+  }
