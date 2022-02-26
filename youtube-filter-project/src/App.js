@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useFetchVideos } from './hooks/useFetchVideos';
 import { Header } from './container/Header/Header';
 import { VideosGrid } from './components/VideosGrid/VideosGrid';
-import { useFetchVideos } from './hooks/useFetchVideos';
+import { Modal } from './container/Modal/Modal';
 import './App.css';
 
 
@@ -10,35 +11,35 @@ function App() {
   const {data, loading} = useFetchVideos();
   
   const [inputValue, setInputValue] = useState('');
-  const [videos, setVideos] = useState(data);
-  const [filteredVideos, setFilteredVideos] = useState(videos)
+  const [filteredVideos, setFilteredVideos] = useState(data);
+  const [showModal, setShowModal] = useState(false);
 
 
   useEffect(() => {
 
-    setVideos(data)
     setFilteredVideos(data)
   
-  }, [data])
+  }, [data]);
   
 
   useEffect(() => {
 
-      setFilteredVideos( videos.filter( video => {
+      setFilteredVideos( data.filter( video => {
           return video.title.toLowerCase().includes(inputValue.toLowerCase()) 
       }))
-  }, [inputValue]) 
+
+  }, [inputValue]);
   
 
   
   return (
     <>
       <Header  setInputValue={setInputValue} inputValue={inputValue} />
-      <VideosGrid videos={filteredVideos} loading={loading} />
+      <VideosGrid videos={filteredVideos} loading={loading} setShowModal={setShowModal} showModal={showModal}/>
 
 
 
-      {/* {true && <Modal/>} */}
+      {/* {showModal && <Modal  id={filteredVideos}/>} */}
     </>
   );
 }

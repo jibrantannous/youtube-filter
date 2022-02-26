@@ -5,7 +5,7 @@ export const getVideos = async () => {
 
     const videos = items.map( video =>{
         return {
-            id: video.id,
+            id: video.contentDetails.videoId,
             title: video.snippet.title,
             url: video.snippet.thumbnails.medium.url
         }
