@@ -10,6 +10,7 @@ export const useFetchVideos = () => {
     });
 
     useEffect(() => {
+
       getVideos()
         .then(videos => {
                 
@@ -19,6 +20,7 @@ export const useFetchVideos = () => {
             });
                 
         })
+        
     }, []);
     
 

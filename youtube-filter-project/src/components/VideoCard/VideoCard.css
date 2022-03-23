@@ -5,6 +5,7 @@
     /* border-radius: 6px; */
     overflow: hidden;
     margin-bottom: 45px;
+    /* margin-right: 10px; */
 }
   
   .card p {
@@ -13,5 +14,20 @@
   }
   
   .card img {
-    width: 300px;
+    width: 100%;
   }
+
+/* @media screen and (max-width: 768px){
+    .card{
+      margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    
+  .card{
+    margin-right: 0px;
+  }
+
+  
+} */

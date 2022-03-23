@@ -5,7 +5,6 @@ export const Filter = ({setInputValue, inputValue }) => {
 
     const handleInputChange = ( e ) => {
         setInputValue(e.target.value);
-        /* videoFilter(inputValue) */
     }
 
     /* const handleSubmit = (e) => {

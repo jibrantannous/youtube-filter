@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import ReactDOM from 'react-dom';
 import './Modal.css'
 
@@ -16,6 +16,6 @@ export const Modal = ({children}) => {
     }, [portalNode])
     
 
-  return ReactDOM.createPortal(children , portalNode) 
+    return ReactDOM.createPortal(children , portalNode) 
 
 }
